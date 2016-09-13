@@ -191,7 +191,7 @@ launch_agent()
 resolve_var_lib_docker()
 {
     local dir="$(docker inspect -f '{{index .Config.Volumes "/var/lib/cattle"}}' rancher-agent-state)"
-    echo $(dirname $(dirname $(dirname $dir)))
+    echo "/var/lib/docker"
 }
 
 verify_docker_client_server_version()
